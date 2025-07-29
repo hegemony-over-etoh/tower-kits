@@ -11,14 +11,14 @@ local CONTAINER_CLASSES = {
 	StarterCharacterScripts = true,
 }
 
-local function getParentsToExport(instance: roblox.DataModel): { roblox.Instance }
+local function getParentsToExport(game: roblox.DataModel): { roblox.Instance }
 	return {
-		instance:GetService("Workspace"),
-		instance:GetService("StarterPack"),
-		instance:GetService("StarterGui"),
-		instance:GetService("ServerScriptService"),
-		instance:GetService("ReplicatedStorage"),
-		instance:GetService("StarterPlayer"),
+		game:GetService("Workspace"),
+		game:GetService("StarterPack"),
+		game:GetService("StarterGui"),
+		game:GetService("ServerScriptService"),
+		game:GetService("ReplicatedStorage"),
+		game:GetService("StarterPlayer"),
 	}
 end
 
