@@ -1,0 +1,30 @@
+{
+    "name": "EToH v5.5 Story Contest Kit",
+    "tree": {
+        "$className": "DataModel",
+        "ReplicatedStorage": {
+            "$path": "src/ReplicatedStorage"
+        },
+        "ServerScriptService": {
+            "$path": "src/ServerScriptService"
+        },
+        "StarterGui": {
+            "$path": "src/StarterGui"
+        },
+        "StarterPack": {
+            "$path": "src/StarterPack"
+        },
+        "StarterPlayer": {
+            "$className": "StarterPlayer",
+            "StarterCharacterScripts": {
+                "$path": "src/StarterPlayer/StarterCharacterScripts"
+            },
+            "StarterPlayerScripts": {
+                "$path": "src/StarterPlayer/StarterPlayerScripts"
+            }
+        },
+        "Workspace": {
+            "$path": "src/Workspace"
+        }
+    }
+}

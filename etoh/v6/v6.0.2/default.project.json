@@ -1,0 +1,27 @@
+{
+    "name": "EToH v6.0.2 Kit",
+    "tree": {
+        "$className": "DataModel",
+        "ReplicatedStorage": {
+            "$path": "src/ReplicatedStorage"
+        },
+        "ServerScriptService": {
+            "$path": "src/ServerScriptService"
+        },
+        "StarterGui": {
+            "$path": "src/StarterGui"
+        },
+        "StarterPack": {
+            "$path": "src/StarterPack"
+        },
+        "StarterPlayer": {
+            "$className": "StarterPlayer",
+            "StarterPlayerScripts": {
+                "$path": "src/StarterPlayer/StarterPlayerScripts"
+            }
+        },
+        "Workspace": {
+            "$path": "src/Workspace"
+        }
+    }
+}
