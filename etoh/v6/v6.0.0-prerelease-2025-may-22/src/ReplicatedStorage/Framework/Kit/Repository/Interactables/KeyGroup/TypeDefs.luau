@@ -1,0 +1,67 @@
+--!strict
+
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local _T = require(ReplicatedStorage.Framework.ClientTypes)
+
+export type Key = {
+	instance: Model?,
+	originalCFrame: CFrame,
+	hitbox: BasePart,
+	timerBillboard: typeof(script.Parent.KeyTimer),
+	config: {
+		SpinSpeed: number,
+		Timer: number,
+	},
+
+	__private: {
+		id: string,
+		groupID: string,
+		group: KeyGroup,
+		overrideCFrame: CFrame?,
+		targetCFrame: CFrame?,
+		parent: Instance,
+		active: boolean,
+		cooldown: boolean,
+		used: boolean,
+		startTimer: number?,
+		collectKey: (self: Key) -> (),
+		returnKey: (self: Key) -> (),
+		viewport: typeof(script.KeyViewport),
+	}?,
+}
+export type KeyDoor = {
+	instance: Model,
+	hitbox: BasePart,
+	doorParts: { [BasePart]: string? },
+	config: {
+		RequiredKeys: number,
+	},
+
+	__private: {
+		id: string,
+		groupID: string,
+		group: KeyGroup,
+		unlocked: boolean,
+		usedKeys: { string },
+		unlockDoor: (self: KeyDoor) -> (),
+		useKey: (self: KeyDoor, keyID: string) -> (),
+	}?,
+}
+export type KeyGroup = {
+	scope: _T.Scope,
+	id: string,
+	keys: { [string]: Key },
+	doors: { [string]: KeyDoor },
+	addKey: (self: KeyGroup, Key) -> Key?,
+	addDoor: (self: KeyGroup, KeyDoor) -> KeyDoor?,
+}
+export type Cache = {
+	groups: { [string]: KeyGroup? },
+	keys: { [string]: Key? },
+	doors: { [string]: KeyDoor? },
+	activeKeys: { string? },
+	newGroup: (_T.Scope) -> KeyGroup,
+	id: string,
+}
+
+return nil

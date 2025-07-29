@@ -42,7 +42,16 @@ local function extractInstances(instances: { roblox.Instance }, baseDir: string)
 				then if (inst :: any).RunContext == Enum.RunContext.Client then ".client.luau" else ".server.luau"
 				elseif inst.ClassName == "LocalScript" then ".client.luau"
 				else ".luau"
-			fs.writeFile(path(baseDir, `{inst.Name}{fileExtension}`), (inst :: any).Source)
+
+			local children = inst:GetChildren()
+			if #children > 0 then
+				local scriptDir = path(baseDir, inst.Name)
+				fs.writeDir(scriptDir)
+				fs.writeFile(path(scriptDir, `init{fileExtension}`), (inst :: any).Source)
+				extractInstances(children, scriptDir)
+			else
+				fs.writeFile(path(baseDir, `{inst.Name}{fileExtension}`), (inst :: any).Source)
+			end
 		else
 			fs.writeFile(path(baseDir, `{inst.Name}.rbxm`), roblox.serializeModel({ inst }))
 		end
