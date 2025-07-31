@@ -1,0 +1,33 @@
+{
+    "name": "OToH v0.3.1 Kit",
+    "tree": {
+        "$className": "DataModel",
+        "ReplicatedStorage": {
+            "$path": "src/ReplicatedStorage"
+        },
+        "ServerScriptService": {
+            "$path": "src/ServerScriptService"
+        },
+        "StarterGui": {
+            "$path": "src/StarterGui"
+        },
+        "StarterPack": {
+            "$path": "src/StarterPack"
+        },
+        "StarterPlayer": {
+            "$className": "StarterPlayer",
+            "StarterCharacterScripts": {
+                "$path": "src/StarterPlayer/StarterCharacterScripts"
+            },
+            "StarterPlayerScripts": {
+                "$path": "src/StarterPlayer/StarterPlayerScripts"
+            }
+        },
+        "Workspace": {
+            "$path": "src/Workspace"
+        },
+        "SoundService": {
+            "$path": "src/SoundService"
+        }
+    }
+}
